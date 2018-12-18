@@ -6,7 +6,7 @@
 /*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 23:21:11 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/04 21:46:47 by amerlon-         ###   ########.fr       */
+/*   Updated: 2018/12/18 22:14:50 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,6 +99,8 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 **	char	*ft_strshift(char **str, size_t n) : delete first n chars
 **	char	*ft_strjoinch(char **str, char c) : appends char to string
 **	char	*ft_copyuntil(char *str, int c) : copys until meets char
+**	char	*ft_strchr_safe(const char *s, int c) : safe strchr
+**	char	*ft_strdup_safe(const char *s1) : safe strdup
 **
 **	void	ft_iloveyoupeer(void) : expressing my love for peer ^_^
 */
@@ -114,5 +116,7 @@ void				*ft_realloc(void *ptr, size_t size, size_t new_size);
 char				*ft_strshift(char **str, size_t n);
 char				*ft_strjoinch(char **str, char c);
 char				*ft_copyuntil(char *str, int c);
+char				*ft_strchr_safe(const char *s, int c);
+char				*ft_strdup_safe(const char *s1);
 
 #endif
