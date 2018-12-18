@@ -6,7 +6,7 @@
 /*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 23:21:11 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/18 22:14:50 by amerlon-         ###   ########.fr       */
+/*   Updated: 2018/12/18 22:17:26 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <fcntl.h>
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
@@ -101,6 +102,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 **	char	*ft_copyuntil(char *str, int c) : copys until meets char
 **	char	*ft_strchr_safe(const char *s, int c) : safe strchr
 **	char	*ft_strdup_safe(const char *s1) : safe strdup
+**	int		get_next_line(const int fd, char **line) : reading one line from fd
 **
 **	void	ft_iloveyoupeer(void) : expressing my love for peer ^_^
 */
@@ -118,5 +120,8 @@ char				*ft_strjoinch(char **str, char c);
 char				*ft_copyuntil(char *str, int c);
 char				*ft_strchr_safe(const char *s, int c);
 char				*ft_strdup_safe(const char *s1);
+
+# define BUFF_SIZE 32
+int					get_next_line(const int fd, char **line);
 
 #endif
