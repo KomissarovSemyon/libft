@@ -6,7 +6,7 @@
 #    By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 20:02:14 by amerlon-          #+#    #+#              #
-#    Updated: 2018/12/18 22:21:35 by amerlon-         ###   ########.fr        #
+#    Updated: 2019/01/04 14:58:04 by amerlon-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,8 @@ SRC = ft_strlen.c \
 		ft_strchr_safe.c \
 		ft_strdup_safe.c \
 		get_next_line.c \
-
+		ft_strnchr.c \
+		ft_abs.c
 OBJS = $(SRC:.c=.o)
 INCLUDES = libft.h
 
@@ -91,40 +92,23 @@ all: $(NAME)
 
 $(NAME): $(OBJS) 
 	@ar rcs $(NAME) $(OBJS)
-	@echo "Buildin library"
+	@echo "\033[34mBuildin library\033[0m"
 	@ranlib $(NAME)
-	@echo "Indexing library"
+	@echo "\033[34mIndexing library\033[0m"
 
 $(OBJS): %.o: %.c
-	@gcc -Wall -Werror -Wextra -O3 -c $< -I$(INCLUDES) -o $@
+	@gcc -Wall -Werror -Wextra -c $< -I$(INCLUDES) -o $@
 
 clean:
 	@rm -f $(OBJS)
-	@echo "Deleting binaries"
+	@echo "\033[34mDeleting library binaries\033[0m"
 
 fclean: clean
 	@rm -f libft.a
-	@echo "Deleting library"
+	@echo "\033[34mDeleting library\033[0m"
 
 re: fclean all
 
 norm:
 	@echo "Checking norm"
 	@norminette $(SRC) libft.h
-
-test1: re
-	make clean
-	gcc -g ../test/tests1.c libft.a -o test_output
-	./test_output
-
-testput: re
-	make clean
-	gcc -g ../test/testsput.c libft.a -o test_output
-	./test_output > ../test/test2_received
-	diff -U 3 ../test/test2_expected ../test/test2_received
-	diff -U 3 ../test/test2_expected ../test/test2_received_fd
-
-test2: re
-	make clean
-	gcc -g ../test/tests2.c libft.a -o test_output
-	./test_output

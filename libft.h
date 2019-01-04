@@ -6,7 +6,7 @@
 /*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 23:21:11 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/18 22:17:26 by amerlon-         ###   ########.fr       */
+/*   Updated: 2019/01/04 14:59:03 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,6 +120,8 @@ char				*ft_strjoinch(char **str, char c);
 char				*ft_copyuntil(char *str, int c);
 char				*ft_strchr_safe(const char *s, int c);
 char				*ft_strdup_safe(const char *s1);
+int					ft_strnchr(const char *s, char ch, int n);
+int					ft_abs(int a);
 
 # define BUFF_SIZE 32
 int					get_next_line(const int fd, char **line);
