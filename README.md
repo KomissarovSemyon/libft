@@ -2,17 +2,14 @@
 My implementation of some of the Standard C Library functions including some additional ones.
 
 ### TOC
-- [Libft - @21Born2Code](#libft---21born2code)
-		- [TOC](#toc)
-		- [What is libft?](#what-is-libft)
-		- [What's in it?](#whats-in-it)
-		- [How does it work?](#how-does-it-work)
-		- [How do I use the library?](#how-do-i-use-the-library)
-		- [How do I test it? How do I test my own implementations?](#how-do-i-test-it-how-do-i-test-my-own-implementations)
-			- [1. To test the code in this repo](#1-to-test-the-code-in-this-repo)
-			- [2. To test your own code](#2-to-test-your-own-code)
-	- [Example usage](#example-usage)
-	- [Sponsors](#sponsors)
+* [What is libft?](#what-is-libft)
+* [What's in it?](#whats-in-it)
+* [How does it work?](#how-does-it-work)
+* [How do I use the library?](#how-do-i-use-the-library)
+* [How do I test it? How do I test my own implementations?](#how-do-i-test-it-how-do-i-test-my-own-implementations)
+	1. [To test the code in this repo](#1-to-test-the-code-in-this-repo)
+	2. [To test your own code](#2-to-test-your-own-code)
+* [Example usage](#example-usage)
 
 ### What is libft?
 [Libft][1] is an individual project at [school 21(Moscow campus 42)][10] that requires us to re-create some standard C library functions including some additional ones that can be used later to build a library of useful functions for the rest of the program.
@@ -30,11 +27,11 @@ As you can see from the [Project instructions][1], there are 4 sections:
 
 Libc functions | Additional functions | Bonus Functions | Personal Functions
 :----------- | :-----------: | :-----------: | -----------:
-memset		| ft_memalloc	| ft_lstnew		| ft_iswhitespace 
-bzero		| ft_memdel		| ft_lstdelone	| ft_nbrlen 
-memcpy		| ft_strnew		| ft_lstdel		| ft_wordcount    
-memccpy		| ft_strdel		| ft_lstadd		| ft_nextword    
-memmove		| ft_strclr		| ft_lstiter	| ft_strndup    
+memset		| ft_memalloc	| ft_lstnew		| ft_iswhitespace
+bzero		| ft_memdel		| ft_lstdelone	| ft_nbrlen
+memcpy		| ft_strnew		| ft_lstdel		| ft_wordcount
+memccpy		| ft_strdel		| ft_lstadd		| ft_nextword
+memmove		| ft_strclr		| ft_lstiter	| ft_strndup
 memchr		| ft_striter	| ft_lstmap		| ft_lstclr
 memcmp		| ft_striteri	|				| ft_iloveyoupeer
 strlen		| ft_strmap		|				| ft_strshift
@@ -43,20 +40,20 @@ strcpy		| ft_strequ		|				| ft_copyuntil
 strncpy		| ft_strnequ	|			| ft_strchr_safe
 strcat		| ft_strsub		| | ft_strdup_safe
 strlcat		| ft_strjoin	| | get_next_line
-strchr		| ft_strtrim	| | 
-strrchr		| ft_strsplit	| | 
-strstr		| ft_itoa		| | 
-strnstr		| ft_putchar	| | 
-strcmp		| ft_putstr		| | 
-strncmp		| ft_putendl	| | 
-atoi		| ft_putnbr		| | 
-isalpha		| ft_putchar_fd	| | 
-isdigit		| ft_putstr_fd	| | 
-isalnum		| ft_putendl_fd	| | 
+strchr		| ft_strtrim	| |
+strrchr		| ft_strsplit	| |
+strstr		| ft_itoa		| |
+strnstr		| ft_putchar	| |
+strcmp		| ft_putstr		| |
+strncmp		| ft_putendl	| |
+atoi		| ft_putnbr		| |
+isalpha		| ft_putchar_fd	| |
+isdigit		| ft_putstr_fd	| |
+isalnum		| ft_putendl_fd	| |
 isascii		| ft_putnbr_fd	| |
-isprint		|| | 
-toupper		| | | 
-tolower		| | | 
+isprint		|| |
+toupper		| | |
+tolower		| | |
 
 
 Notes:
@@ -87,9 +84,9 @@ Now to clean up (removing the .o files and the .c files from the root), call `ma
 
 ### How do I use the library?
 
-I added an example file called **example.c**, it's using the function **ft_putstr** to print "DON'T PANIC" to the screen. 
+I added an example file called **example.c**, it's using the function **ft_putstr** to print "DON'T PANIC" to the screen.
 
-If you try to compile it with gcc using `gcc example.c` you will get an *undefined symbol* error for ft_putstr. 
+If you try to compile it with gcc using `gcc example.c` you will get an *undefined symbol* error for ft_putstr.
 
 You have to tell the file where your library resides and which library it is using:
 
@@ -107,17 +104,17 @@ To test the code we're going to be using @alelievr's [Libft Unit Test][4]. There
 #### 1. To test the code in this repo
 
 1. Clone this repo and cd into it, make sure it's called `libft`:
-		
+
 		git clone https://github.com/R4meau/libft
 		cd libft/
 2. Copy all the source files to the root directory:
-	
+
 		make copy
 3. Run Make so you can build the library:
-		
+
 		make
 4. Go back to the root directory and download @alelievr's Libft Unit Test:
-		
+
 		cd ..
 		git clone https://github.com/alelievr/libft-unit-test
 5. Go into the test folder and run the test:
@@ -144,15 +141,15 @@ You might want to have a go at this project too. If you've never heard of Makefi
 		cd libft
 		vim ft_memset.c
 		vim Makefile
-		
-	As an example, after creating ft_memset as your first function, you go into the Makefile, remove the `#` in front of `FILES`, remove the `\` at the end of `ft_memset` and add a `#` in front of `ft_bzero`. 
-	
+
+	As an example, after creating ft_memset as your first function, you go into the Makefile, remove the `#` in front of `FILES`, remove the `\` at the end of `ft_memset` and add a `#` in front of `ft_bzero`.
+
 	If it still looks complicated, **DON'T PANIC**, [just ask me][8] :)
 4. Run Make so you can build the library:
-		
-		make	
+
+		make
 5. Go back to the root directory and download @alelievr's Libft Unit Test:
-		
+
 		cd ..
 		git clone https://github.com/alelievr/libft-unit-test
 6. Go into the test folder and run the test:
