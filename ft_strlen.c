@@ -6,7 +6,7 @@
 /*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 20:19:57 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/12/04 21:46:31 by amerlon-         ###   ########.fr       */
+/*   Updated: 2019/01/27 02:43:07 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 size_t	ft_strlen(const char *str)
 {
-	int	i;
+	size_t	i;
 
 	i = -1;
 	while (str[++i])
