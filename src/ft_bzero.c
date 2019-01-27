@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcat.c                                        :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/22 16:43:39 by amerlon-          #+#    #+#             */
-/*   Updated: 2018/11/26 15:25:10 by amerlon-         ###   ########.fr       */
+/*   Created: 2018/11/22 19:34:43 by amerlon-          #+#    #+#             */
+/*   Updated: 2019/01/27 03:27:31 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strcat(char *s1, const char *s2)
-{
-	int i;
-	int j;
+#include "libft.h"
 
+void	ft_bzero(void *s, size_t n)
+{
+	char	*now;
+	size_t	i;
+
+	if (n == 0)
+		return ;
+	now = (char *)s;
 	i = -1;
-	while (s1[++i])
-		;
-	j = -1;
-	while (s2[++j])
-	{
-		s1[i] = s2[j];
-		i++;
-	}
-	s1[i] = '\0';
-	return (s1);
+	while (++i < n)
+		now[i] = '\0';
 }

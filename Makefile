@@ -6,11 +6,16 @@
 #    By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 20:02:14 by amerlon-          #+#    #+#              #
-#    Updated: 2019/01/04 14:58:04 by amerlon-         ###   ########.fr        #
+#    Updated: 2019/01/27 04:08:35 by amerlon-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+
+OBJ_DIR = ./obj
+INC_DIR = ./inc
+SRC_DIR = ./src
+
 SRC = ft_strlen.c \
 		ft_isalpha.c \
 		ft_isdigit.c \
@@ -85,10 +90,12 @@ SRC = ft_strlen.c \
 		get_next_line.c \
 		ft_strnchr.c \
 		ft_abs.c
-OBJS = $(SRC:.c=.o)
-INCLUDES = libft.h
+OBJS = $(addprefix $(OBJ_DIR)/,$(SRC:%.c=%.o))
 
-all: $(NAME)
+all: $(OBJ_DIR) $(NAME)
+
+$(OBJ_DIR):
+	@mkdir -p $(OBJ_DIR)
 
 $(NAME): $(OBJS) 
 	@ar rcs $(NAME) $(OBJS)
@@ -96,15 +103,15 @@ $(NAME): $(OBJS)
 	@ranlib $(NAME)
 	@echo "\033[34mIndexing library\033[0m"
 
-$(OBJS): %.o: %.c
-	@gcc -Wall -Werror -Wextra -c $< -I$(INCLUDES) -o $@
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	gcc -Wall -Werror -Wextra -c $< -I$(INC_DIR) -o $@
 
 clean:
-	@rm -f $(OBJS)
+	@rm -rf $(OBJ_DIR)
 	@echo "\033[34mDeleting library binaries\033[0m"
 
 fclean: clean
-	@rm -f libft.a
+	@rm -f $(NAME)
 	@echo "\033[34mDeleting library\033[0m"
 
 re: fclean all
