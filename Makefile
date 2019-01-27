@@ -6,7 +6,7 @@
 #    By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 20:02:14 by amerlon-          #+#    #+#              #
-#    Updated: 2019/01/27 05:47:54 by amerlon-         ###   ########.fr        #
+#    Updated: 2019/01/27 05:49:30 by amerlon-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -119,3 +119,5 @@ re: fclean all
 norm:
 	@echo "Checking norm"
 	@norminette $(SRC_DIR) $(INC_DIR)
+
+.PHONY: all clean fclean re norm
