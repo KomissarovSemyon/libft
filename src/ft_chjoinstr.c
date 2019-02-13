@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoinch.c                                     :+:      :+:    :+:   */
+/*   ft_chjoinstr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: semyonkomissarov <semyonkomissarov@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/04 21:17:54 by amerlon-          #+#    #+#             */
-/*   Updated: 2019/02/13 11:38:43 by semyonkomis      ###   ########.fr       */
+/*   Created: 2019/01/31 18:10:07 by amerlon-          #+#    #+#             */
+/*   Updated: 2019/02/13 11:39:37 by semyonkomis      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoinch(char **str, char c, int flag)
+char	*ft_chjoinstr(char c, char **str, int flag)
 {
 	char	*res;
+	int		i;
 
 	if (!str || !(*str))
 		return (NULL);
+	if (c == '\0')
+		return (ft_strdup(*str));
 	res = ft_strnew(ft_strlen(*str) + 1);
 	if (!res)
 		return (NULL);
-	res = ft_strcpy(res, *str);
-	res = ft_strncat(res, &c, 1);
+	i = 0;
+	res[0] = c;
+	while ((*str)[i])
+	{
+		res[i + 1] = (*str)[i];
+		i++;
+	}
 	if (flag)
 		ft_strdel(str);
 	return (res);

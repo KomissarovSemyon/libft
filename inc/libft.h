@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
+/*   By: semyonkomissarov <semyonkomissarov@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 23:21:11 by amerlon-          #+#    #+#             */
-/*   Updated: 2019/01/27 09:19:19 by amerlon-         ###   ########.fr       */
+/*   Updated: 2019/02/13 11:22:35 by semyonkomis      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,11 @@ char				*ft_strtrim(char const *s);
 char				*ft_itoa(int n);
 char				**ft_strsplit(char const *s, char c);
 
-void				ft_putchar(char c);
+int					ft_putchar(char c);
 int					ft_putstr(char const *s);
 int					ft_putendl(char const *s);
 int					ft_putnbr(int n);
-void				ft_putchar_fd(char s, int fd);
+int					ft_putchar_fd(char s, int fd);
 int					ft_putstr_fd(char const *s, int fd);
 int					ft_putendl_fd(char const *s, int fd);
 int					ft_putnbr_fd(int n, int fd);
@@ -87,6 +87,7 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+int					ft_printf(const char *f, ...);
 
 /*
 **	My functions
@@ -108,7 +109,7 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 */
 
 int					ft_iswhitespace(int c);
-int					ft_nbrlen(int c);
+int					ft_nbrlen(unsigned long long int nbr);
 int					ft_wordcount(const char *str, char del);
 char				*ft_nextword(char const *s, char c);
 char				*ft_strndup(const char *s1, size_t n);
@@ -116,15 +117,21 @@ void				ft_lstclr(t_list *lst);
 void				ft_iloveyoupeer(void);
 void				*ft_realloc(void *ptr, size_t size, size_t new_size);
 char				*ft_strshift(char **str, size_t n);
-char				*ft_strjoinch(char **str, char c);
 char				*ft_copyuntil(char *str, int c);
 char				*ft_strchr_safe(const char *s, int c);
 char				*ft_strdup_safe(const char *s1);
 int					ft_strnchr(const char *s, char ch, int n);
-int					ft_abs(int a);
+long long int		ft_abs(long long int a);
+char				*ft_ltoa_base(long long int n, int base);
+int					ft_putstr_until(char *s, char c);
+int					ft_nbrlen_base(unsigned long long int nbr, int base);
+char				*ft_strjoinch(char **str, char c, int flag);
+char				*ft_chjoinstr(char c, char **str, int flag);
+char				*ft_strjoinnch(char **str, char c, int n, int flag);
+char				*ft_nchjoinstr(char c, int n, char **str, int flag);
 
 # define BUFF_SIZE 32
 
-int					get_next_line(const int fd, char **line);
+int					ft_gnl(const int fd, char **line);
 
 #endif

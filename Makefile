@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+         #
+#    By: semyonkomissarov <semyonkomissarov@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 20:02:14 by amerlon-          #+#    #+#              #
-#    Updated: 2019/01/27 05:49:30 by amerlon-         ###   ########.fr        #
+#    Updated: 2019/02/13 11:20:54 by semyonkomis      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,9 +87,15 @@ SRC = ft_strlen.c \
 		ft_copyuntil.c \
 		ft_strchr_safe.c \
 		ft_strdup_safe.c \
-		get_next_line.c \
+		ft_gnl.c \
 		ft_strnchr.c \
-		ft_abs.c
+		ft_abs.c \
+		ft_nbrlen_base.c \
+		ft_ltoa_base.c \
+		ft_putstr_until.c \
+		ft_chjoinstr.c \
+		ft_strjoinnch.c \
+		ft_nchjoinstr.c
 OBJS = $(addprefix $(OBJ_DIR)/,$(SRC:%.c=%.o))
 
 all: $(OBJ_DIR) $(NAME)
@@ -104,7 +110,7 @@ $(NAME): $(OBJS)
 	@echo "\033[34mIndexing library\033[0m"
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	gcc -Wall -Werror -Wextra -c $< -I$(INC_DIR) -o $@
+	gcc -g -Wall -Werror -Wextra -c $< -I$(INC_DIR) -o $@
 
 clean:
 	@rm -rf $(OBJ_DIR)
@@ -119,5 +125,8 @@ re: fclean all
 norm:
 	@echo "Checking norm"
 	@norminette $(SRC_DIR) $(INC_DIR)
+
+main:
+	gcc -g -Iinc main.c libft.a && ./a.out
 
 .PHONY: all clean fclean re norm
