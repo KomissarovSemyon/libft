@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: semyonkomissarov <semyonkomissarov@stud    +#+  +:+       +#+         #
+#    By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/11/21 20:02:14 by amerlon-          #+#    #+#              #
-#    Updated: 2019/02/13 11:20:54 by semyonkomis      ###   ########.fr        #
+#    Updated: 2019/02/17 02:08:51 by amerlon-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ OBJ_DIR = ./obj
 INC_DIR = ./inc
 SRC_DIR = ./src
 
-SRC = ft_strlen.c \
+SRC =	ft_strlen.c \
 		ft_isalpha.c \
 		ft_isdigit.c \
 		ft_isalnum.c \
@@ -95,7 +95,9 @@ SRC = ft_strlen.c \
 		ft_putstr_until.c \
 		ft_chjoinstr.c \
 		ft_strjoinnch.c \
-		ft_nchjoinstr.c
+		ft_nchjoinstr.c \
+		ft_strmjoin.c
+
 OBJS = $(addprefix $(OBJ_DIR)/,$(SRC:%.c=%.o))
 
 all: $(OBJ_DIR) $(NAME)

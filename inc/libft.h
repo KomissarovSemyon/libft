@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: semyonkomissarov <semyonkomissarov@stud    +#+  +:+       +#+        */
+/*   By: amerlon- <amerlon-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/21 23:21:11 by amerlon-          #+#    #+#             */
-/*   Updated: 2019/02/13 11:22:35 by semyonkomis      ###   ########.fr       */
+/*   Updated: 2019/02/17 02:00:57 by amerlon-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,6 +129,7 @@ char				*ft_strjoinch(char **str, char c, int flag);
 char				*ft_chjoinstr(char c, char **str, int flag);
 char				*ft_strjoinnch(char **str, char c, int n, int flag);
 char				*ft_nchjoinstr(char c, int n, char **str, int flag);
+char				*ft_mstrjoin(char **s1, char **s2, int flag);
 
 # define BUFF_SIZE 32
 
